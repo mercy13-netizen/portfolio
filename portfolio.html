@@ -1,0 +1,1222 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <base target="_self">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio BTS SIO SISR</title>
+    <meta name="description" content="Portfolio étudiant BTS SIO option SISR - Spécialisation en cybersécurité et réseaux">
+    <meta name="keywords" content="BTS SIO, SISR, cybersécurité, réseau, portfolio étudiant, informatique">
+    <meta name="author" content="Votre Nom">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome pour les icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    
+    <!-- Google Fonts pour le thème cyberpunk -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Roboto+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <script>
+        // Configuration de Tailwind avec thème cyberpunk
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        // Couleurs principales du thème cyberpunk
+                        cyber: {
+                            primary: "#00ff9d",    // Vert néon
+                            secondary: "#ff00ff",   // Magenta néon
+                            accent: "#00eeff",      // Cyan néon
+                            dark: "#0a0a0f",        // Noir profond
+                            gray: "#1a1a2e",        // Gris bleuté
+                            light: "#e0e0ff"        // Bleu clair
+                        }
+                    },
+                    fontFamily: {
+                        // Polices pour le thème cyberpunk
+                        'orbitron': ['Orbitron', 'sans-serif'],
+                        'roboto-mono': ['Roboto Mono', 'monospace']
+                    },
+                    animation: {
+                        // Animations cyberpunk
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                        'scan': 'scan 3s linear infinite',
+                        'pulse-neon': 'pulse-neon 1.5s ease-in-out infinite'
+                    },
+                    keyframes: {
+                        glow: {
+                            'from': { 'text-shadow': '0 0 5px #00ff9d, 0 0 10px #00ff9d, 0 0 15px #00ff9d' },
+                            'to': { 'text-shadow': '0 0 10px #00ff9d, 0 0 20px #00ff9d, 0 0 30px #00ff9d' }
+                        },
+                        scan: {
+                            '0%': { 'transform': 'translateY(-100%)' },
+                            '100%': { 'transform': 'translateY(100%)' }
+                        },
+                        'pulse-neon': {
+                            '0%, 100%': { 'opacity': '1' },
+                            '50%': { 'opacity': '0.5' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Styles CSS personnalisés pour effets cyberpunk */
+        .cyber-border {
+            border: 2px solid #00ff9d;
+            box-shadow: 0 0 10px #00ff9d;
+        }
+        
+        .cyber-card {
+            background: linear-gradient(145deg, #1a1a2e, #0a0a0f);
+            border: 1px solid #00ff9d;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cyber-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #00ff9d, transparent);
+            animation: scan 3s linear infinite;
+        }
+        
+        .text-glow {
+            text-shadow: 0 0 10px currentColor;
+        }
+        
+        .bg-grid {
+            background-image: 
+                linear-gradient(rgba(0, 255, 157, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 157, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-cyber-dark text-cyber-light font-roboto-mono overflow-x-hidden">
+    
+    <!-- Effet de fond avec grille cyberpunk -->
+    <div class="fixed inset-0 bg-grid opacity-20 pointer-events-none"></div>
+    
+    <!-- Navigation principale -->
+    <header class="sticky top-0 z-50 bg-cyber-dark/90 backdrop-blur-sm border-b border-cyber-primary">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                
+                <!-- Logo / Nom -->
+                <div class="mb-4 md:mb-0">
+                    <a href="#" class="text-2xl font-orbitron font-bold text-cyber-primary hover:text-cyber-accent transition-colors duration-300">
+                        <span class="text-glow">// PORTFOLIO_SISR</span>
+                    </a>
+                    <p class="text-xs text-cyber-accent mt-1">BTS SIO - Option SISR</p>
+                </div>
+                
+                <!-- Menu de navigation -->
+                <div class="flex flex-wrap justify-center gap-4 md:gap-8">
+                    <!-- Chaque lien utilise JavaScript pour la navigation -->
+                    <a href="#accueil" class="nav-link text-cyber-light hover:text-cyber-primary transition-colors duration-300 py-2 px-4 border border-transparent hover:border-cyber-primary rounded">
+                        <i class="fas fa-home mr-2"></i>Accueil
+                    </a>
+                    <a href="#profil" class="nav-link text-cyber-light hover:text-cyber-primary transition-colors duration-300 py-2 px-4 border border-transparent hover:border-cyber-primary rounded">
+                        <i class="fas fa-user mr-2"></i>Profil
+                    </a>
+                    <a href="#competences" class="nav-link text-cyber-light hover:text-cyber-primary transition-colors duration-300 py-2 px-4 border border-transparent hover:border-cyber-primary rounded">
+                        <i class="fas fa-code mr-2"></i>Compétences
+                    </a>
+                    <a href="#projets" class="nav-link text-cyber-light hover:text-cyber-primary transition-colors duration-300 py-2 px-4 border border-transparent hover:border-cyber-primary rounded">
+                        <i class="fas fa-project-diagram mr-2"></i>Projets
+                    </a>
+                    <a href="#veille" class="nav-link text-cyber-light hover:text-cyber-primary transition-colors duration-300 py-2 px-4 border border-transparent hover:border-cyber-primary rounded">
+                        <i class="fas fa-rss mr-2"></i>Veille Tech
+                    </a>
+                    <a href="#e5" class="nav-link text-cyber-light hover:text-cyber-primary transition-colors duration-300 py-2 px-4 border border-transparent hover:border-cyber-primary rounded">
+                        <i class="fas fa-file-alt mr-2"></i>E5
+                    </a>
+                    <a href="#contact" class="nav-link text-cyber-light hover:text-cyber-primary transition-colors duration-300 py-2 px-4 border border-transparent hover:border-cyber-primary rounded">
+                        <i class="fas fa-envelope mr-2"></i>Contact
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="relative z-10">
+        
+        <!-- Section Accueil -->
+        <section id="accueil" class="min-h-screen flex items-center relative overflow-hidden">
+            <div class="container mx-auto px-4 py-16">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    
+                    <!-- Texte d'introduction -->
+                    <div class="cyber-card p-8 rounded-lg">
+                        <div class="mb-6">
+                            <h1 class="text-4xl md:text-5xl font-orbitron font-bold text-cyber-primary mb-4 animate-glow">
+                                <span class="text-glow">&lt;ÉTUDIANT_BTS_SIO/&gt;</span>
+                            </h1>
+                            <h2 class="text-2xl md:text-3xl font-orbitron text-cyber-secondary mb-4">
+                                Option <span class="text-cyber-accent">SISR</span>
+                            </h2>
+                            <p class="text-lg mb-6">
+                                // Spécialisation en Solutions d'Infrastructure, Systèmes et Réseaux
+                            </p>
+                        </div>
+                        
+                        <div class="space-y-4">
+                            <p class="text-cyber-light">
+                                <span class="text-cyber-primary font-bold">// NOTE:</span> Bienvenue sur mon portfolio de deuxième année de BTS SIO. Ce site présente mon parcours, mes compétences et mes projets réalisés dans le cadre de ma formation.
+                            </p>
+                            <p class="text-cyber-light">
+                                <span class="text-cyber-accent font-bold">// OBJECTIF:</span> Acquérir des compétences en administration système, réseau et cybersécurité pour devenir administrateur systèmes et réseaux.
+                            </p>
+                        </div>
+                        
+                        <!-- Boutons d'action -->
+                        <div class="mt-8 flex flex-wrap gap-4">
+                            <a href="#projets" class="nav-link bg-cyber-primary text-cyber-dark font-bold py-3 px-6 rounded hover:bg-cyber-accent transition-all duration-300 transform hover:scale-105">
+                                <i class="fas fa-rocket mr-2"></i>Voir mes projets
+                            </a>
+                            <a href="#contact" class="nav-link border border-cyber-primary text-cyber-primary py-3 px-6 rounded hover:bg-cyber-primary hover:text-cyber-dark transition-all duration-300">
+                                <i class="fas fa-terminal mr-2"></i>Me contacter
+                            </a>
+                        </div>
+                    </div>
+                    
+                    
+                        <!-- Statistiques -->
+                        <div class="grid grid-cols-2 gap-4 mt-6">
+                            <div class="cyber-card p-4 text-center">
+                                <div class="text-3xl font-orbitron text-cyber-primary">2</div>
+                                <div class="text-sm">Années de formation</div>
+                            </div>
+                            <div class="cyber-card p-4 text-center">
+                                <div class="text-3xl font-orbitron text-cyber-accent">4</div>
+                                <div class="text-sm">Projets réalisés</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Section Profil -->
+        <section id="profil" class="py-16 bg-cyber-gray/50">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-orbitron text-cyber-primary mb-4">
+                        <i class="fas fa-id-card mr-3"></i>PROFIL ÉTUDIANT
+                    </h2>
+                    <div class="w-24 h-1 bg-cyber-primary mx-auto mb-6"></div>
+                    <p class="text-lg max-w-3xl mx-auto">
+                        // Présentation de mon parcours académique et de mes objectifs professionnels
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Carte: À propos -->
+                    <div class="cyber-card p-6 rounded-lg">
+                        <div class="text-cyber-primary text-2xl mb-4">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <h3 class="text-xl font-orbitron text-cyber-primary mb-4">À PROPOS DE MOI</h3>
+                        <p class="mb-4">
+                            <span class="text-cyber-accent font-bold"></span> Étudiant passionné par les technologies réseau et la cybersécurité. Je suis actuellement en deuxième année de BTS SIO option SISR.
+                        </p>
+                        <ul class="space-y-2">
+                            <li><i class="fas fa-angle-right text-cyber-primary mr-2"></i><strong>Nom:</strong>Mouanga</li>
+                            <li><i class="fas fa-angle-right text-cyber-primary mr-2"></i><strong>Prénom:</strong>Mercy mo olmez</li>
+ 
+                            <li><i class="fas fa-angle-right text-cyber-primary mr-2"></i><strong>Âge:</strong>20ans</li>
+                            <li><i class="fas fa-angle-right text-cyber-primary mr-2"></i><strong>Ville:</strong>Paris</li>
+                            <li><i class="fas fa-angle-right text-cyber-primary mr-2"></i><strong>Établissement:</strong>Institut F2I</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Carte: Formation -->
+                    <div class="cyber-card p-6 rounded-lg">
+                        <div class="text-cyber-primary text-2xl mb-4">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3 class="text-xl font-orbitron text-cyber-primary mb-4">PARCOURS ACADÉMIQUE</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="font-bold text-cyber-accent">BTS SIO - Option SISR</h4>
+                                <p class="text-sm">2025 - 2027 | Institut F2I</p>
+                                <p class="text-sm mt-1">Spécialisation infrastructure systèmes et réseaux</p>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-cyber-accent">Baccalauréat</h4>
+                                <p class="text-sm">2024 - 2025 | Lycée Rose Massombo</p>
+                                <p class="text-sm mt-1">Mention: passable</p>
+                                <p class="text-sm mt-1">Spécialité: mathématiques, sciences de la vie et de la terre</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Carte: Objectifs -->
+                    <div class="cyber-card p-6 rounded-lg">
+                        <div class="text-cyber-primary text-2xl mb-4">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <h3 class="text-xl font-orbitron text-cyber-primary mb-4">OBJECTIFS PROFESSIONNELS</h3>
+                        <p class="mb-4">
+                            À l'issue de mon BTS, je souhaite:
+                        </p>
+                        <ul class="space-y-2">
+                            <li><i class="fas fa-check text-cyber-primary mr-2"></i>Poursuivre en licence professionnelle</li>
+                            <li><i class="fas fa-check text-cyber-primary mr-2"></i>Me spécialiser en cybersécurité</li>
+                            <li><i class="fas fa-check text-cyber-primary mr-2"></i>Devenir administrateur systèmes et réseaux</li>
+                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Section Compétences -->
+        <section id="competences" class="py-16">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-orbitron text-cyber-primary mb-4">
+                        <i class="fas fa-cogs mr-3"></i>COMPÉTENCES TECHNIQUES
+                    </h2>
+                    <div class="w-24 h-1 bg-cyber-primary mx-auto mb-6"></div>
+                    <p class="text-lg max-w-3xl mx-auto">
+                        // Compétences acquises durant la formation BTS SIO option SISR
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Compétence: Réseaux -->
+                    <div class="cyber-card p-6 rounded-lg">
+                        <div class="flex items-center mb-4">
+                            <div class="text-cyber-primary text-2xl mr-4">
+                                <i class="fas fa-network-wired"></i>
+                            </div>
+                            <h3 class="text-xl font-orbitron text-cyber-primary">RÉSEAUX</h3>
+                        </div>
+                        <ul class="space-y-3">
+                            <li class="flex justify-between">
+                                <span>Configuration routeurs/switches</span>
+                                <span class="text-cyber-primary">85%</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span>Protocoles TCP/IP</span>
+                                <span class="text-cyber-primary">65%</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span>Réseaux VLAN</span>
+                                <span class="text-cyber-primary">50%</span>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <!-- Compétence: Systèmes -->
+                    <div class="cyber-card p-6 rounded-lg">
+                        <div class="flex items-center mb-4">
+                            <div class="text-cyber-primary text-2xl mr-4">
+                                <i class="fas fa-server"></i>
+                            </div>
+                            <h3 class="text-xl font-orbitron text-cyber-primary">SYSTÈMES</h3>
+                        </div>
+                        <ul class="space-y-3">
+                            <li class="flex justify-between">
+                                <span>Windows Server</span>
+                                <span class="text-cyber-primary">80%</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span>Linux (Ubuntu, Debian)</span>
+                                <span class="text-cyber-primary">50%</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span>Virtualisation (VMware)</span>
+                                <span class="text-cyber-primary">85%</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span>Services (DNS, DHCP, AD)</span>
+                                <span class="text-cyber-primary">90%</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Compétence: Cybersécurité -->
+                    <div class="cyber-card p-6 rounded-lg">
+                        <div class="flex items-center mb-4">
+                            <div class="text-cyber-primary text-2xl mr-4">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h3 class="text-xl font-orbitron text-cyber-primary">CYBERSÉCURITÉ</h3>
+                        </div>
+                        <ul class="space-y-3">
+                            <li class="flex justify-between">
+                                <span>Pare-feu (pfSense)</span>
+                                <span class="text-cyber-primary">50%</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span>Analyse de vulnérabilités</span>
+                                <span class="text-cyber-primary">50%</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span>Politiques de sécurité</span>
+                                <span class="text-cyber-primary">50%</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span>Sensibilisation utilisateurs</span>
+                                <span class="text-cyber-primary">80%</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                   
+                    
+                    
+                    
+                </div>
+            </div>
+        </section>
+        
+        <!-- Section Projets -->
+        <section id="projets" class="py-16 bg-cyber-gray/50">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-orbitron text-cyber-primary mb-4">
+                        <i class="fas fa-laptop-code mr-3"></i>PROJETS RÉALISÉS
+                    </h2>
+                    <div class="w-24 h-1 bg-cyber-primary mx-auto mb-6"></div>
+                    <p class="text-lg max-w-3xl mx-auto">
+                        // Sélection de projets réalisés durant la formation BTS SIO
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Projet 1 -->
+                    <div class="cyber-card p-6 rounded-lg hover:transform hover:scale-105 transition-transform duration-300">
+                        <div class="mb-4">
+                            <img 
+                                src="Image_portfolio/SGB.png" 
+                                alt="Interface d'administration réseau" 
+                                class="w-full h-48 object-cover rounded"
+                                loading="lazy"
+                            />
+                        </div>
+                        <h3 class="text-xl font-orbitron text-cyber-primary mb-2">AP 1</h3>
+                        <p class="text-sm text-cyber-light mb-4">
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-cyber-dark text-cyber-primary text-xs rounded">Sécurité post de travail</span>
+                            <span class="px-2 py-1 bg-cyber-dark text-cyber-accent text-xs rounded">Deploiement de post</span>
+                            <span class="px-2 py-1 bg-cyber-dark text-cyber-secondary text-xs rounded">Solution conforme linux windows</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Projet 2 -->
+                    <div class="cyber-card p-6 rounded-lg hover:transform hover:scale-105 transition-transform duration-300">
+                        <div class="mb-4">
+                            <img 
+                                src="Image_portfolio/logo-parcus.png" 
+                                alt="Serveur Linux en fonctionnement" 
+                                class="w-full h-48 object-cover rounded"
+                                loading="lazy"
+                            />
+                        </div>
+                        <h3 class="text-xl font-orbitron text-cyber-primary mb-2">AP 2</h3>
+                        <p class="text-sm text-cyber-light mb-4">
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-cyber-dark text-cyber-primary text-xs rounded">déploiement de logiciels</span>
+                            <span class="px-2 py-1 bg-cyber-dark text-cyber-accent text-xs rounded">Gestion de parc et inventaire automatisé</span>
+                            <span class="px-2 py-1 bg-cyber-dark text-cyber-secondary text-xs rounded">Gestion des Incidents et des Demandes </span>
+                        </div>
+                    </div>
+                    
+                    <!-- Projet 3 -->
+                    <div class="cyber-card p-6 rounded-lg hover:transform hover:scale-105 transition-transform duration-300">
+                        <div class="mb-4">
+                            <img 
+                                src="Image_portfolio/logo_ECP-600px.jpg" 
+                                alt="Tableau de bord de monitoring" 
+                                class="w-full h-48 object-cover rounded"
+                                loading="lazy"
+                            />
+                        </div>
+                        <h3 class="text-xl font-orbitron text-cyber-primary mb-2">AP 3</h3>
+                        <p class="text-sm text-cyber-light mb-4">
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-cyber-dark text-cyber-primary text-xs rounded">pfSense</span>
+                            <span class="px-2 py-1 bg-cyber-dark text-cyber-accent text-xs rounded">Windows serveurs</span>
+                            <span class="px-2 py-1 bg-cyber-dark text-cyber-secondary text-xs rounded">SAN</span>
+                        </div>
+                        <div class="flex flex-wrap gap-3 mt-2">
+                            <!-- Remplacez le href par le lien vers le cahier des charges de l'AP3 -->
+                            <a href="https://drive.google.com/file/d/1nkWwKpJkxwqYHEbVOMMf-WA5fquD23Sr/view?usp=drive_link" 
+                               target="_blank"
+                               class="inline-flex items-center gap-2 bg-cyber-primary/10 border border-cyber-primary text-cyber-primary text-xs py-1 px-3 rounded hover:bg-cyber-primary hover:text-cyber-dark transition-all duration-300">
+                                <i class="fas fa-clipboard-list"></i> Cahier des charges
+                            </a>
+                            <!-- Remplacez le href par le lien vers le livrable de l'AP3 -->
+                            <a href="https://drive.google.com/file/d/1T_GMVT4-0Bj7OdqtVZK_Cvdj0tLP7nsd/view?usp=drive_link" 
+                               target="_blank"
+                               class="inline-flex items-center gap-2 bg-cyber-accent/10 border border-cyber-accent text-cyber-accent text-xs py-1 px-3 rounded hover:bg-cyber-accent hover:text-cyber-dark transition-all duration-300">
+                                <i class="fas fa-box-open"></i> Livrable/DOC techniques
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Projet 4 -->
+                    <div class="cyber-card p-6 rounded-lg hover:transform hover:scale-105 transition-transform duration-300">
+                        <div class="mb-4">
+                            <img 
+                                src="Image_portfolio/Protection_Civile_-_Logo_2017.svg.png" 
+                                alt="Pare-feu et sécurité réseau" 
+                                class="w-full h-48 object-cover rounded"
+                                loading="lazy"
+                            />
+                        </div>
+                        <h3 class="text-xl font-orbitron text-cyber-primary mb-2">AP 4</h3>
+                        <p class="text-sm text-cyber-light mb-4">
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-cyber-dark text-cyber-primary text-xs rounded">VPN</span>
+                            <span class="px-2 py-1 bg-cyber-dark text-cyber-accent text-xs rounded">IPBX</span>
+                            <span class="px-2 py-1 bg-cyber-dark text-cyber-secondary text-xs rounded">solution de supervision</span>
+                        </div>
+                        <div class="flex flex-wrap gap-3 mt-2">
+                            <!-- Remplacez le href par le lien vers le cahier des charges de l'AP4 -->
+                            <a href="https://drive.google.com/file/d/1M0Avs7jz7SRj6SIc_uT4rUD1DpjZ848Y/view?usp=drive_link" 
+                               target="_blank"
+                               class="inline-flex items-center gap-2 bg-cyber-primary/10 border border-cyber-primary text-cyber-primary text-xs py-1 px-3 rounded hover:bg-cyber-primary hover:text-cyber-dark transition-all duration-300">
+                                <i class="fas fa-clipboard-list"></i> Cahier des charges
+                            </a>
+                            <!-- Remplacez le href par le lien vers le livrable de l'AP4 -->
+                            <a href="https://drive.google.com/file/d/1JBW1AbGypBgjoTiFG_HvGwGPUjyimjKN/view?usp=drive_link" 
+                               target="_blank"
+                               class="inline-flex items-center gap-2 bg-cyber-accent/10 border border-cyber-accent text-cyber-accent text-xs py-1 px-3 rounded hover:bg-cyber-accent hover:text-cyber-dark transition-all duration-300">
+                                <i class="fas fa-box-open"></i> Livrable/DOC techniques
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        
+        <!-- ============================================ -->
+        <!-- Section Veille Technologique VR/AR           -->
+        <!-- ============================================ -->
+        <section id="veille" class="py-16">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-orbitron text-cyber-primary mb-4">
+                        <i class="fas fa-vr-cardboard mr-3"></i>VEILLE TECHNOLOGIQUE
+                    </h2>
+                    <div class="w-24 h-1 bg-cyber-primary mx-auto mb-6"></div>
+                    <p class="text-lg max-w-3xl mx-auto">
+                        // Réalité Virtuelle &amp; Réalité Augmentée — État de l'art et tendances
+                    </p>
+                </div>
+
+                <!-- Introduction thème -->
+                <div class="cyber-card p-8 rounded-lg mb-10 max-w-4xl mx-auto">
+                    <div class="flex items-center gap-4 mb-4">
+                        <i class="fas fa-satellite-dish text-cyber-accent text-3xl"></i>
+                        <h3 class="text-xl font-orbitron text-cyber-accent">POURQUOI CE THÈME ?</h3>
+                    </div>
+                    <p class="text-cyber-light leading-relaxed">
+                        La réalité virtuelle (VR) et la réalité augmentée (AR) représentent une convergence majeure entre l'informatique, les réseaux et l'expérience utilisateur. Dans le cadre de mon BTS SIO option SISR, j'ai choisi de suivre l'évolution de ces technologies qui impactent directement les infrastructures réseau (latence, bande passante, edge computing) et la sécurité des systèmes embarqués.
+                    </p>
+                </div>
+
+                <!-- Grille d'articles de veille -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+
+                    <!-- Article 1 -->
+                    <div class="cyber-card p-6 rounded-lg flex flex-col">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="bg-cyber-primary/20 text-cyber-primary text-xs font-bold px-3 py-1 rounded-full border border-cyber-primary">
+                                <i class="fas fa-glasses mr-1"></i> VR
+                            </span>
+                            <span class="text-xs text-cyber-gray">Janvier 2025</span>
+                        </div>
+                        <h4 class="text-lg font-orbitron text-cyber-primary mb-3">Apple Vision Pro : l'AR grand public</h4>
+                        <p class="text-sm text-cyber-light leading-relaxed flex-grow">
+                            Lancé début 2024, l'Apple Vision Pro marque l'entrée de la réalité mixte dans le marché grand public. Ce casque autonome fusionne VR et AR grâce à des caméras passthrough en temps réel, ouvrant la voie à de nouveaux usages professionnels (conception 3D, téléprésence, formation).
+                        </p>
+                        <div class="mt-4 pt-4 border-t border-cyber-gray">
+                            <p class="text-xs text-cyber-accent"><i class="fas fa-link mr-1"></i>Source : <span class="underline">apple.com/apple-vision-pro</span></p>
+                        </div>
+                    </div>
+
+                    <!-- Article 2 -->
+                    <div class="cyber-card p-6 rounded-lg flex flex-col">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="bg-cyber-secondary/20 text-cyber-secondary text-xs font-bold px-3 py-1 rounded-full border border-cyber-secondary">
+                                <i class="fas fa-network-wired mr-1"></i> Infrastructure
+                            </span>
+                            <span class="text-xs text-cyber-gray">Mars 2025</span>
+                        </div>
+                        <h4 class="text-lg font-orbitron text-cyber-primary mb-3">VR &amp; Edge Computing : le rôle des réseaux</h4>
+                        <p class="text-sm text-cyber-light leading-relaxed flex-grow">
+                            Les casques VR exigent une latence inférieure à 20 ms pour éviter le "motion sickness". L'edge computing et la 5G sont devenus indispensables pour traiter les rendus graphiques en temps réel au plus près de l'utilisateur, réduisant la charge des serveurs centraux et les temps de transit réseau.
+                        </p>
+                        <div class="mt-4 pt-4 border-t border-cyber-gray">
+                            <p class="text-xs text-cyber-accent"><i class="fas fa-link mr-1"></i>Source : <span class="underline">qualcomm.com/research/xr</span></p>
+                        </div>
+                    </div>
+
+                    <!-- Article 3 -->
+                    <div class="cyber-card p-6 rounded-lg flex flex-col">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="bg-cyber-accent/20 text-cyber-accent text-xs font-bold px-3 py-1 rounded-full border border-cyber-accent">
+                                <i class="fas fa-shield-alt mr-1"></i> Sécurité
+                            </span>
+                            <span class="text-xs text-cyber-gray">Avril 2025</span>
+                        </div>
+                        <h4 class="text-lg font-orbitron text-cyber-primary mb-3">Cybersécurité dans les environnements XR</h4>
+                        <p class="text-sm text-cyber-light leading-relaxed flex-grow">
+                            Les casques VR/AR collectent des données biométriques sensibles (mouvements oculaires, posture, voix). De nouvelles menaces émergent : injection de contenu malveillant dans l'espace virtuel, vol de données de capteurs, ou manipulation perceptuelle. La sécurisation de ces devices devient un enjeu SISR majeur.
+                        </p>
+                        <div class="mt-4 pt-4 border-t border-cyber-gray">
+                            <p class="text-xs text-cyber-accent"><i class="fas fa-link mr-1"></i>Source : <span class="underline">xrsi.org/security</span></p>
+                        </div>
+                    </div>
+
+                    <!-- Article 4 -->
+                    <div class="cyber-card p-6 rounded-lg flex flex-col">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="bg-cyber-primary/20 text-cyber-primary text-xs font-bold px-3 py-1 rounded-full border border-cyber-primary">
+                                <i class="fas fa-industry mr-1"></i> Industrie
+                            </span>
+                            <span class="text-xs text-cyber-gray">Juin 2025</span>
+                        </div>
+                        <h4 class="text-lg font-orbitron text-cyber-primary mb-3">AR dans la maintenance industrielle</h4>
+                        <p class="text-sm text-cyber-light leading-relaxed flex-grow">
+                            Les lunettes AR (HoloLens, RealWear) révolutionnent la maintenance industrielle en superposant des schémas techniques directement sur les équipements réels. Des entreprises comme Airbus ou Renault les déploient pour guider les techniciens à distance, réduisant les erreurs de 30 à 50 % selon les études terrain.
+                        </p>
+                        <div class="mt-4 pt-4 border-t border-cyber-gray">
+                            <p class="text-xs text-cyber-accent"><i class="fas fa-link mr-1"></i>Source : <span class="underline">microsoft.com/hololens</span></p>
+                        </div>
+                    </div>
+
+                    <!-- Article 5 -->
+                    <div class="cyber-card p-6 rounded-lg flex flex-col">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="bg-cyber-secondary/20 text-cyber-secondary text-xs font-bold px-3 py-1 rounded-full border border-cyber-secondary">
+                                <i class="fas fa-graduation-cap mr-1"></i> Formation
+                            </span>
+                            <span class="text-xs text-cyber-gray">Août 2025</span>
+                        </div>
+                        <h4 class="text-lg font-orbitron text-cyber-primary mb-3">La VR au service de la formation IT</h4>
+                        <p class="text-sm text-cyber-light leading-relaxed flex-grow">
+                            Des plateformes comme Strivr ou Praxis Labs proposent des salles serveurs et datacenters virtuels pour former les futurs administrateurs systèmes. On peut simuler des pannes réseau, des interventions physiques sur rack et des configurations complexes dans un environnement sans risque, idéal pour les formations BTS SIO.
+                        </p>
+                        <div class="mt-4 pt-4 border-t border-cyber-gray">
+                            <p class="text-xs text-cyber-accent"><i class="fas fa-link mr-1"></i>Source : <span class="underline">strivr.com</span></p>
+                        </div>
+                    </div>
+
+                    <!-- Article 6 -->
+                    <div class="cyber-card p-6 rounded-lg flex flex-col">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="bg-cyber-accent/20 text-cyber-accent text-xs font-bold px-3 py-1 rounded-full border border-cyber-accent">
+                                <i class="fas fa-chart-line mr-1"></i> Tendances
+                            </span>
+                            <span class="text-xs text-cyber-gray">Octobre 2025</span>
+                        </div>
+                        <h4 class="text-lg font-orbitron text-cyber-primary mb-3">Le marché XR en 2025 : chiffres clés</h4>
+                        <p class="text-sm text-cyber-light leading-relaxed flex-grow">
+                            Le marché mondial de la VR/AR atteint 38 milliards de dollars en 2025 et devrait dépasser 100 milliards d'ici 2028 (IDC). La convergence avec l'IA générative (avatars réalistes, environnements procéduraux) et le déploiement de la 5G sa sont les deux principaux moteurs de cette croissance.
+                        </p>
+                        <div class="mt-4 pt-4 border-t border-cyber-gray">
+                            <p class="text-xs text-cyber-accent"><i class="fas fa-link mr-1"></i>Source : <span class="underline">idc.com/xr-market-2025</span></p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Synthèse / Bilan de veille -->
+                <div class="cyber-card p-8 rounded-lg max-w-4xl mx-auto">
+                    <div class="flex items-center gap-4 mb-6">
+                        <i class="fas fa-brain text-cyber-primary text-3xl"></i>
+                        <h3 class="text-xl font-orbitron text-cyber-primary">BILAN DE VEILLE</h3>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center mb-6">
+                        <div class="bg-cyber-dark rounded p-4 border border-cyber-primary/30">
+                            <div class="text-3xl font-orbitron text-cyber-primary mb-1">6</div>
+                            <div class="text-sm text-cyber-light">Articles analysés</div>
+                        </div>
+                        <div class="bg-cyber-dark rounded p-4 border border-cyber-accent/30">
+                            <div class="text-3xl font-orbitron text-cyber-accent mb-1">4</div>
+                            <div class="text-sm text-cyber-light">Thématiques couvertes</div>
+                        </div>
+                        <div class="bg-cyber-dark rounded p-4 border border-cyber-secondary/30">
+                            <div class="text-3xl font-orbitron text-cyber-secondary mb-1">12</div>
+                            <div class="text-sm text-cyber-light">Mois de suivi</div>
+                        </div>
+                    </div>
+                    <p class="text-cyber-light leading-relaxed text-sm">
+                        La VR/AR n'est plus une technologie de niche : elle s'intègre progressivement dans les infrastructures d'entreprise, imposant de nouveaux défis aux administrateurs systèmes et réseaux (bande passante, latence, sécurité des données biométriques). En tant que futur professionnel SISR, comprendre ces enjeux est essentiel pour anticiper les besoins d'infrastructure de demain.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Section E5 -->
+        <section id="e5" class="py-16">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-orbitron text-cyber-primary mb-4">
+                        <i class="fas fa-file-alt mr-3"></i>ÉPREUVE E5
+                    </h2>
+                    <div class="w-24 h-1 bg-cyber-primary mx-auto mb-6"></div>
+                    <p class="text-lg max-w-3xl mx-auto">
+                        // Documents relatifs à l'épreuve E5 du BTS SIO
+                    </p>
+                </div>
+
+                <div class="flex justify-center">
+                    <div class="cyber-card p-8 rounded-lg max-w-xl w-full text-center">
+                        <div class="text-cyber-primary text-4xl mb-6">
+                            <i class="fas fa-table"></i>
+                        </div>
+                        <h3 class="text-xl font-orbitron text-cyber-primary mb-4">TABLEAU DE SYNTHÈSE E5</h3>
+                        <p class="text-cyber-light mb-6 text-sm">
+                            Accédez au tableau de synthèse récapitulant les activités professionnelles réalisées dans le cadre de l'épreuve E5.
+                        </p>
+                        <!-- Remplacez le href ci-dessous par votre vrai lien (Google Drive, PDF, etc.) -->
+                        <a href="https://drive.google.com/file/d/1whQQu-dvZrJ179C5ZUdgvocIEtBjrn1c/view?usp=sharing" 
+                           target="_blank"
+                           class="inline-flex items-center gap-2 bg-cyber-primary text-cyber-dark font-bold py-3 px-6 rounded hover:bg-cyber-accent transition-all duration-300 transform hover:scale-105">
+                            <i class="fas fa-external-link-alt"></i> Tableau de Synthèse E5
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Contact -->
+
+        <section id="contact" class="py-16 bg-cyber-gray/50">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-orbitron text-cyber-primary mb-4">
+                        <i class="fas fa-envelope mr-3"></i>ME CONTACTER
+                    </h2>
+                    <div class="w-24 h-1 bg-cyber-primary mx-auto mb-6"></div>
+                    <p class="text-lg max-w-3xl mx-auto">
+                        // N'hésitez pas à me contacter pour toute question ou opportunité
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    
+                    <!-- Formulaire de contact -->
+                    <div class="cyber-card p-8 rounded-lg">
+                        <h3 class="text-2xl font-orbitron text-cyber-primary mb-6">ENVOYER UN MESSAGE</h3>
+                        
+                        <form id="contactForm" class="space-y-6">
+                            <div>
+                                <label for="name" class="block text-cyber-light mb-2">Nom complet *</label>
+                                <input 
+                                    type="text" 
+                                    id="name" 
+                                    name="name"
+                                    required
+                                    class="w-full bg-cyber-dark border border-cyber-gray rounded px-4 py-3 text-cyber-light focus:outline-none focus:border-cyber-primary focus:ring-2 focus:ring-cyber-primary/50 transition-all duration-300"
+                                    placeholder="Votre nom"
+                                >
+                            </div>
+                            
+                            <div>
+                                <label for="email" class="block text-cyber-light mb-2">Adresse email *</label>
+                                <input 
+                                    type="email" 
+                                    id="email" 
+                                    name="email"
+                                    required
+                                    class="w-full bg-cyber-dark border border-cyber-gray rounded px-4 py-3 text-cyber-light focus:outline-none focus:border-cyber-primary focus:ring-2 focus:ring-cyber-primary/50 transition-all duration-300"
+                                    placeholder="votre@email.com"
+                                >
+                            </div>
+                            
+                            <div>
+                                <label for="subject" class="block text-cyber-light mb-2">Sujet *</label>
+                                <input 
+                                    type="text" 
+                                    id="subject" 
+                                    name="subject"
+                                    required
+                                    class="w-full bg-cyber-dark border border-cyber-gray rounded px-4 py-3 text-cyber-light focus:outline-none focus:border-cyber-primary focus:ring-2 focus:ring-cyber-primary/50 transition-all duration-300"
+                                    placeholder="Sujet de votre message"
+                                >
+                            </div>
+                            
+                            <div>
+                                <label for="message" class="block text-cyber-light mb-2">Message *</label>
+                                <textarea 
+                                    id="message" 
+                                    name="message"
+                                    rows="5"
+                                    required
+                                    class="w-full bg-cyber-dark border border-cyber-gray rounded px-4 py-3 text-cyber-light focus:outline-none focus:border-cyber-primary focus:ring-2 focus:ring-cyber-primary/50 transition-all duration-300"
+                                    placeholder="Votre message..."
+                                ></textarea>
+                            </div>
+                            
+                            <button 
+                                type="submit"
+                                class="w-full bg-cyber-primary text-cyber-dark font-bold py-3 px-6 rounded hover:bg-cyber-accent transition-all duration-300 transform hover:scale-105"
+                            >
+                                <i class="fas fa-paper-plane mr-2"></i>Envoyer le message
+                            </button>
+                            
+                            <p class="text-xs text-cyber-gray mt-4">
+                                * Les champs marqués d'une astérisque sont obligatoires.
+                            </p>
+                        </form>
+                    </div>
+                    
+                    <!-- Informations de contact -->
+                    <div class="cyber-card p-8 rounded-lg">
+                        <h3 class="text-2xl font-orbitron text-cyber-primary mb-6">COORDONNÉES</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="text-cyber-primary text-xl mr-4">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-cyber-accent mb-1">Adresse</h4>
+                                    <p class="text-cyber-light">8 Boulevard André Bassée</p>
+                                    <p class="text-cyber-light">94120 Fontenay sous bois</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="text-cyber-primary text-xl mr-4">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-cyber-accent mb-1">Email</h4>
+                                    <p class="text-cyber-light">Mouangamercy13@gmail.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="text-cyber-primary text-xl mr-4">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-cyber-accent mb-1">Téléphone</h4>
+                                    <p class="text-cyber-light">0667492163</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="text-cyber-primary text-xl mr-4">
+                                    <i class="fas fa-school"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-cyber-accent mb-1">Établissement</h4>
+                                    <p class="text-cyber-light">Institut F2I</p>
+                                    <p class="text-sm text-cyber-gray">BTS SIO - Option SISR</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Liens sociaux -->
+                        <div class="mt-8 pt-8 border-t border-cyber-gray">
+                            <h4 class="font-bold text-cyber-accent mb-4">SUIVEZ-MOI</h4>
+                            <div class="flex space-x-4">
+                                <a href="https://www.linkedin.com/in/mathias-lignier-402844306/?originalSubdomain=fr" class="social-link text-cyber-light hover:text-cyber-primary transition-colors duration-300">
+                                    <i class="fab fa-linkedin text-2xl"></i>
+                                </a>
+                                <a href="https://github.com/MathiasLignier" class="social-link text-cyber-light hover:text-cyber-primary transition-colors duration-300">
+                                    <i class="fab fa-github text-2xl"></i>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- Téléchargement CV -->
+                        <div class="mt-8">
+                            <a href="CV.pdf" target="_blank" download class="inline-flex items-center justify-center w-full border border-cyber-primary text-cyber-primary py-3 px-6 rounded hover:bg-cyber-primary hover:text-cyber-dark transition-all duration-300">
+                                <i class="fas fa-download mr-2"></i>Télécharger mon CV
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-cyber-dark border-t border-cyber-primary">
+        <div class="container mx-auto px-4 py-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Colonne 1: À propos -->
+                <div>
+                    <h3 class="text-xl font-orbitron text-cyber-primary mb-4">À PROPOS</h3>
+                    <p class="text-sm text-cyber-light mb-4">
+                        Portfolio étudiant réalisé dans le cadre du BTS SIO option SISR. Ce site présente mon parcours, mes compétences et mes projets.
+                    </p>
+                </div>
+                
+                <!-- Colonne 2: Liens rapides -->
+                <div>
+                    <h3 class="text-xl font-orbitron text-cyber-primary mb-4">LIENS RAPIDES</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#accueil" class="nav-link text-cyber-light hover:text-cyber-primary transition-colors duration-300">Accueil</a></li>
+                        <li><a href="#profil" class="nav-link text-cyber-light hover:text-cyber-primary transition-colors duration-300">Profil</a></li>
+                        <li><a href="#competences" class="nav-link text-cyber-light hover:text-cyber-primary transition-colors duration-300">Compétences</a></li>
+                        <li><a href="#projets" class="nav-link text-cyber-light hover:text-cyber-primary transition-colors duration-300">Projets</a></li>
+                        <li><a href="#veille" class="nav-link text-cyber-light hover:text-cyber-primary transition-colors duration-300">Veille Tech</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Colonne 3: Mentions -->
+                <div>
+                    <h3 class="text-xl font-orbitron text-cyber-primary mb-4">MENTIONS</h3>
+                    <p class="text-sm text-cyber-light mb-4">
+                        Ce site est un projet éducatif réalisé pour l'épreuve de BTS SIO.
+                    </p>
+                    <p class="text-xs text-cyber-gray">
+                        Thème: Cyberpunk<br>
+                        Technologies: HTML5, CSS3, JavaScript, Tailwind CSS
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Copyright -->
+            <div class="mt-8 pt-8 border-t border-cyber-gray text-center">
+                <p class="text-sm text-cyber-light">
+                    &copy; 2026 Portfolio BTS SIO SISR. Tous droits réservés.
+                </p>
+                <p class="text-xs text-cyber-gray mt-2">
+                    Mathias Lignier - Étudiant en BTS SIO option SISR
+                </p>
+                <!-- Mentions légales discrètes -->
+                <p class="text-xs text-cyber-gray/40 mt-4">
+                    <button onclick="document.getElementById('modal-mentions').classList.remove('hidden')" 
+                            class="hover:text-cyber-gray transition-colors duration-300 underline underline-offset-2">
+                        Mentions légales
+                    </button>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modale Mentions légales -->
+    <div id="modal-mentions" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4">
+        <!-- Fond sombre -->
+        <div class="absolute inset-0 bg-black/70 backdrop-blur-sm" onclick="document.getElementById('modal-mentions').classList.add('hidden')"></div>
+        <!-- Contenu -->
+        <div class="relative cyber-card rounded-lg p-8 max-w-2xl w-full max-h-[80vh] overflow-y-auto z-10">
+            <button onclick="document.getElementById('modal-mentions').classList.add('hidden')" 
+                    class="absolute top-4 right-4 text-cyber-gray hover:text-cyber-primary transition-colors duration-300 text-xl">
+                <i class="fas fa-times"></i>
+            </button>
+            <h2 class="text-2xl font-orbitron text-cyber-primary mb-6">MENTIONS LÉGALES</h2>
+
+            <div class="space-y-6 text-sm text-cyber-light">
+
+                <div>
+                    <h3 class="font-bold text-cyber-accent mb-2">Éditeur du site</h3>
+                    <p>Ce site est un portfolio personnel réalisé dans le cadre du BTS SIO option SISR.</p>
+                    <p class="mt-1">Mathias Lignier — Étudiant en BTS SIO</p>
+                    <p>ECP-Apprentissage, Schiltigheim (67300)</p>
+                    <p>Contact : mathias.perso.box@gmail.com</p>
+                </div>
+
+                <div>
+                    <h3 class="font-bold text-cyber-accent mb-2">Hébergement</h3>
+                    <p>Ce site est un fichier HTML statique hébergé sur hostinger.</p>
+                </div>
+
+                <div>
+                    <h3 class="font-bold text-cyber-accent mb-2">Propriété intellectuelle</h3>
+                    <p>L'ensemble du contenu de ce site (textes, images, code) est la propriété de Mathias Lignier, sauf mention contraire. Toute reproduction, même partielle, est interdite sans autorisation préalable.</p>
+                </div>
+
+                <div>
+                    <h3 class="font-bold text-cyber-accent mb-2">Données personnelles</h3>
+                    <p>Ce site ne collecte aucune donnée personnelle à des fins commerciales. Les informations saisies dans le formulaire de contact sont uniquement destinées à établir une prise de contact.</p>
+                </div>
+
+                <div>
+                    <h3 class="font-bold text-cyber-accent mb-2">Responsabilité</h3>
+                    <p>Ce site est un projet éducatif. Les informations présentées sont fournies à titre indicatif et peuvent évoluer. L'éditeur ne saurait être tenu responsable d'éventuelles erreurs ou omissions.</p>
+                </div>
+
+                <div>
+                    <h3 class="font-bold text-cyber-accent mb-2">Technologies utilisées</h3>
+                    <p>HTML5 · CSS3 · JavaScript · Tailwind CSS · Font Awesome · Google Fonts</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    
+    <!-- Script JavaScript -->
+    <script>
+        // ============================================
+        // SECTION: DONNÉES ET CONFIGURATION
+        // ============================================
+        
+        // Données des projets (à personnaliser)
+        const projetsData = [
+            {
+                "id": 1,
+                "titre": "Déploiement d'un réseau d'entreprise",
+                "description": "Mise en place complète d'un réseau pour une PME fictive avec VLAN, services et sécurité.",
+                "technologies": ["Cisco Packet Tracer", "VLAN", "Sécurité"],
+                "image": "https://picsum.photos/400/250?random=2"
+            },
+            {
+                "id": 2,
+                "titre": "Migration vers serveur Linux",
+                "description": "Migration des services d'une entreprise depuis Windows Server vers Ubuntu Server.",
+                "technologies": ["Ubuntu Server", "Apache", "MySQL"],
+                "image": "https://pmp.parcus.com/build/images/logo-parcus-large.7bea66c5.png"
+            },
+            {
+                "id": 3,
+                "titre": "Système de monitoring réseau",
+                "description": "Développement d'une interface web pour surveiller l'état du réseau et des serveurs.",
+                "technologies": ["PHP", "MySQL", "SNMP"],
+                "image": "https://picsum.photos/400/250?random=4"
+            }
+        ];
+        
+        // Données des compétences (à personnaliser)
+        const competencesData = {
+            "reseaux": [
+                { "nom": "Configuration routeurs/switches", "niveau": 85 },
+                { "nom": "Protocoles TCP/IP", "niveau": 90 },
+                { "nom": "Réseaux VLAN", "niveau": 80 },
+                { "nom": "WiFi sécurisé", "niveau": 75 }
+            ],
+            "systemes": [
+                { "nom": "Windows Server", "niveau": 80 },
+                { "nom": "Linux (Ubuntu, CentOS)", "niveau": 85 },
+                { "nom": "Virtualisation (VMware)", "niveau": 75 },
+                { "nom": "Services (DNS, DHCP, AD)", "niveau": 80 }
+            ]
+        };
+        
+        // ============================================
+        // SECTION: FONCTIONS UTILITAIRES
+        // ============================================
+        
+        /**
+         * Fonction pour gérer la navigation fluide
+         * Empêche le comportement par défaut des liens et fait défiler vers la section cible
+         */
+        function setupSmoothNavigation() {
+            // Sélectionne tous les liens de navigation
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    // Empêche le comportement par défaut du lien
+                    e.preventDefault();
+                    
+                    // Récupère l'ID de la cible depuis l'attribut href
+                    const targetId = this.getAttribute('href');
+                    
+                    // Vérifie si c'est un lien d'ancrage (commence par #)
+                    if (targetId.startsWith('#')) {
+                        const targetElement = document.querySelector(targetId);
+                        
+                        if (targetElement) {
+                            // Défilement fluide vers l'élément cible
+                            window.scrollTo({
+                                top: targetElement.offsetTop - 80, // Compense la hauteur du header
+                                behavior: 'smooth'
+                            });
+                            
+                            // Met à jour l'URL sans recharger la page
+                            history.pushState(null, null, targetId);
+                        }
+                    }
+                });
+            });
+        }
+        
+        /**
+         * Fonction pour gérer le formulaire de contact
+         */
+        function setupContactForm() {
+            const contactForm = document.getElementById('contactForm');
+            
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    // Empêche l'envoi réel du formulaire (simulation)
+                    e.preventDefault();
+                    
+                    // Récupère les valeurs du formulaire
+                    const name = document.getElementById('name').value;
+                    const email = document.getElementById('email').value;
+                    const subject = document.getElementById('subject').value;
+                    const message = document.getElementById('message').value;
+                    
+                    // Simulation d'envoi (à remplacer par un vrai envoi)
+                    console.log("=== SIMULATION D'ENVOI DE FORMULAIRE ===");
+                    console.log("Nom:", name);
+                    console.log("Email:", email);
+                    console.log("Sujet:", subject);
+                    console.log("Message:", message);
+                    console.log("======================================");
+                    
+                    // Affiche un message de confirmation
+                    alert("Message envoyé avec succès! (simulation)\n\nEn production, ce formulaire enverrait réellement l'email.");
+                    
+                    // Réinitialise le formulaire
+                    contactForm.reset();
+                });
+            }
+        }
+        
+        /**
+         * Fonction pour ajouter des effets visuels cyberpunk
+         */
+        function setupCyberpunkEffects() {
+            // Ajoute un effet de survol aux cartes
+            const cards = document.querySelectorAll('.cyber-card');
+            
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.boxShadow = "0 0 20px #00ff9d, 0 0 40px #00ff9d";
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.boxShadow = "";
+                });
+            });
+            
+            // Effet de texte qui "s'allume" aléatoirement
+            const glowTexts = document.querySelectorAll('.text-glow');
+            
+            setInterval(() => {
+                glowTexts.forEach(text => {
+                    const random = Math.random();
+                    if (random > 0.7) {
+                        text.style.animation = 'glow 0.5s ease-in-out';
+                        setTimeout(() => {
+                            text.style.animation = '';
+                        }, 500);
+                    }
+                });
+            }, 3000);
+        }
+        
+        /**
+         * Fonction pour gérer les liens sociaux
+         */
+        function setupSocialLinks() {
+            const socialLinks = document.querySelectorAll('.social-link');
+            
+            socialLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    alert("En production, ce lien ouvrirait votre profil sur le réseau social correspondant.");
+                });
+            });
+        }
+        
+        /**
+         * Fonction pour initialiser le portfolio
+         * Cette fonction est appelée quand la page est chargée
+         */
+        function initPortfolio() {
+            console.log("=== INITIALISATION DU PORTFOLIO BTS SIO ===");
+            console.log("Thème: Cyberpunk");
+            console.log("Option: SISR (Solutions d'Infrastructure, Systèmes et Réseaux)");
+            console.log("===========================================");
+            
+            // Initialise toutes les fonctionnalités
+            setupSmoothNavigation();
+            setupContactForm();
+            setupCyberpunkEffects();
+            setupSocialLinks();    
+        }
+        
+        // ============================================
+        // SECTION: INITIALISATION
+        // ============================================
+        
+        // Attend que le DOM soit complètement chargé
+        document.addEventListener('DOMContentLoaded', initPortfolio);
+        
+        // Gère le rechargement de la page pour la navigation
+        window.addEventListener('load', function() {
+            // Si l'URL contient un ancre, fait défiler vers cette section
+            if (window.location.hash) {
+                setTimeout(() => {
+                    const target = document.querySelector(window.location.hash);
+                    if (target) {
+                        window.scrollTo({
+                            top: target.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                }, 100);
+            }
+        });
+        
+        // ============================================
+        // SECTION: NOTES POUR L'ÉTUDIANT
+        // ============================================
+        
+        /*
+        INSTRUCTIONS POUR PERSONNALISER LE PORTFOLIO:
+        
+        1. REMPLACER LES INFORMATIONS PERSONNELLES:
+           - Recherchez "[Votre Nom]" et remplacez par votre nom
+           - Recherchez "[Votre Âge]" et remplacez par votre âge
+           - Recherchez "[Votre Ville]" et remplacez par votre ville
+           - Recherchez "[Nom de votre lycée]" et remplacez par le nom de votre établissement
+           - Mettez à jour l'email et le téléphone dans la section contact
+        
+        2. PERSONNALISER LES PROJETS:
+           - Modifiez le tableau `projetsData` dans la section JavaScript
+           - Ajoutez vos propres projets avec descriptions réelles
+           - Remplacez les images par des captures d'écran de vos projets
+        
+        3. AJUSTER LES COMPÉTENCES:
+           - Modifiez le tableau `competencesData` avec vos niveaux réels
+           - Ajoutez ou supprimez des compétences selon votre parcours
+        
+        4. PERSONNALISER LA VEILLE TECHNOLOGIQUE:
+           - Ajoutez vos sources de veille réelles
+           - Rédigez des articles sur vos thèmes de veille
+        
+        5. TESTER LE SITE:
+           - Vérifiez que tous les liens fonctionnent
+           - Testez le formulaire de contact
+           - Vérifiez l'affichage sur mobile
+        
+        6. HÉBERGEMENT:
+           - Vous pouvez héberger ce site sur GitHub Pages, Netlify ou un hébergeur traditionnel
+           - Pensez à acheter un nom de domaine personnalisé si nécessaire
+        
+        BONNE CHANCE POUR VOTRE ÉPREUVE DE BTS SIO!
+        */
+    </script>
+</body>
+</html>
